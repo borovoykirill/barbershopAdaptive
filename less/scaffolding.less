@@ -1,0 +1,56 @@
+@font-face {
+  font-weight: normal;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  src: url("../fonts/ptsansnarrow.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  src: url("../fonts/ptsansnarrow.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  color: #f7f4f1;
+  background-color: @bg-darkgrey;
+}
+
+.main-page {
+  color: #000000;
+  background-color: @bg-lightgrey;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*, * ::before, * ::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.content-box-component {
+  box-sizing: content-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
