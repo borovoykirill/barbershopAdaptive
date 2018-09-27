@@ -1,0 +1,86 @@
+@font-face {
+  font-weight: normal;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  src: url("../fonts/ptsansnarrow.woff") format("woff");
+}
+@font-face {
+  font-weight: 700;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  src: url("../fonts/ptsansnarrow.woff") format("woff");
+}
+body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  color: #f7f4f1;
+  background-color: #353535;
+}
+.main-page {
+  color: #000000;
+  background-color: #f8f5f2;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+*,
+* ::before,
+* ::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+.content-box-component {
+  box-sizing: content-box;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+.stats {
+  background-color: #353535;
+}
+.stats__header {
+  padding: 27px 38px 26px 38px;
+  color: #000000;
+}
+.advantages__item--fast::before {
+  height: 94px;
+  margin-left: -47px;
+  background-image: url("../img/advantage-1-illustration.svg");
+}
+.advantages__item--awesome::before {
+  height: 88px;
+  margin-left: -44px;
+  background-image: url("../img/advantage-2-illustration.svg");
+}
+.advantages__item--expensive::before {
+  height: 91px;
+  margin-left: -45.5px;
+  background-image: url("../img/advantage-3-illustration.svg");
+}
+@media (min-width: 768px) {
+  .page-header {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .page-header__logo {
+    background: #000000 url("../img/bg-desktop-inner.jpg") no-repeat center;
+  }
+}
+@media (min-width: 1200px) {
+  .page-header__logo {
+    height: 649px;
+  }
+}
