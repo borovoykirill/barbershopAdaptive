@@ -1,14 +1,14 @@
 @font-face {
-  font-weight: normal;
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans Narrow";
   font-style: normal;
-  src: url("../fonts/ptsansnarrow.woff") format("woff");
+  font-weight: 400;
+  src: url("../fonts/ptsansnarrow.woff2") format("woff2"), url("../fonts/ptsansnarrow.woff") format("woff");
 }
 @font-face {
-  font-weight: 700;
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans Narrow";
   font-style: normal;
-  src: url("../fonts/ptsansnarrow.woff") format("woff");
+  font-weight: 700;
+  src: url("../fonts/ptsansnarrowbold.woff2") format("woff2"), url("../fonts/ptsansnarrowbold.woff") format("woff");
 }
 body {
   margin: 0;
@@ -17,7 +17,7 @@ body {
   font-family: "PT Sans", Arial, sans-serif;
   font-style: normal;
   color: #f7f4f1;
-  background-color: #353535;
+  background-color: #292929;
 }
 .main-page {
   color: #000000;
@@ -48,12 +48,50 @@ html {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
+.page-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+.page-header__logo {
+  height: 85px;
+}
+.main-nav {
+  width: 320px;
+  margin: 0 auto;
+}
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .stats {
-  background-color: #353535;
+  width: 320px;
+  margin: 0 auto;
 }
 .stats__header {
-  padding: 27px 38px 26px 38px;
-  color: #000000;
+  padding: 30px 40px 25px 40px;
+}
+.stats-list {
+  width: 100%;
+}
+.advantages {
+  width: 320px;
+  margin: 0 auto;
+}
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.advantages__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
 }
 .advantages__item--fast::before {
   height: 94px;
@@ -70,17 +108,140 @@ html {
   margin-left: -45.5px;
   background-image: url("../img/advantage-3-illustration.svg");
 }
+.news {
+  width: 320px;
+  margin: 0 auto;
+}
+.news__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page-footer {
+  background-color: #292929;
+}
+.page-footer {
+  width: 320px;
+  margin: 0 auto;
+}
+.social__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 @media (min-width: 768px) {
-  .page-header {
+  .page-header__logo {
+    -ms-flex-order: 2;
+    order: 2;
+    height: 400px;
+  }
+  .main-nav {
+    width: auto;
+    margin: 0;
+  }
+  .main-nav__wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 640px;
+    margin: 0 auto;
+  }
+  .site-list {
+    width: 570px;
+  }
+  .user-list {
+    width: 60px;
+  }
+  .stats {
+    width: 640px;
+    margin-top: -185px;
+  }
+  .site-list {
     display: -ms-flexbox;
     display: flex;
   }
-  .page-header__logo {
-    background: #000000 url("../img/bg-desktop-inner.jpg") no-repeat center;
+  .advantages {
+    width: 640px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .advantages__list {
+    width: 595px;
+  }
+  .news {
+    width: 640px;
+  }
+  .news__wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .page-footer {
+    width: auto;
+    margin: 0;
+  }
+  .page-footer__wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 640px;
+    margin: 0 auto;
+  }
+  .page-footer__contacts {
+    width: 320px;
+  }
+  .page-footer__copyright {
+    width: 320px;
+  }
+  .social__list {
+    width: 640px;
   }
 }
 @media (min-width: 1200px) {
   .page-header__logo {
-    height: 649px;
+    height: 648px;
+  }
+  .main-nav__wrapper {
+    width: 960px;
+  }
+  .site-list {
+    width: 780px;
+  }
+  .user-list {
+    width: 160px;
+  }
+  .stats {
+    display: -ms-flexbox;
+    display: flex;
+    width: 960px;
+    margin-top: -160px;
+  }
+  .stats__header {
+    width: 240px;
+  }
+  .stats__list {
+    width: 640px;
+  }
+  .news {
+    width: 960px;
+  }
+  .page-footer__wrapper {
+    width: 960px;
+  }
+  .page-footer__contacts {
+    width: 320px;
+  }
+  .page-footer__copyright {
+    width: 161px;
+  }
+  .page-footer__social {
+    width: 164px;
   }
 }
