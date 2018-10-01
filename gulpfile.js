@@ -93,6 +93,19 @@ gulp.task("serve", function() {
   gulp.watch("*.html", ["html:update"]);
 });
 
+gulp.task("watch", function() { /*Отдельно вынес ватчер */
+    gulp.watch("less/**/*.less", ["style"]);
+    gulp.watch("*.html", ["html:update"]);
+});
+
+gulp.task("work", function(fn){ /* Создал таску на чек изменений */
+    run (
+        "watch",
+        "style",
+        fn
+    );
+});
+
 /*Таск для копирования*/
 gulp.task("copy", function() {
   return gulp.src([
