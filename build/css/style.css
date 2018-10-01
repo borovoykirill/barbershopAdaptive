@@ -118,8 +118,11 @@ html {
   list-style: none;
 }
 .reviews {
-  color: #000000;
-  background-color: #f8f5f2;
+  width: 320px;
+  margin: 0 auto;
+}
+.reviews__list {
+  width: 280px;
 }
 .page-footer {
   background-color: #292929;
@@ -186,6 +189,13 @@ html {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+  .reviews__wrapper {
+    width: 640px;
+    margin: 0 auto;
+  }
+  .reviews__list {
+    width: 542px;
+  }
   .page-footer {
     width: auto;
     margin: 0;
@@ -235,6 +245,12 @@ html {
   }
   .news {
     width: 960px;
+  }
+  .reviews__wrapper {
+    width: 960px;
+  }
+  .reviews__list {
+    width: 818px;
   }
   .page-footer__wrapper {
     width: 960px;
