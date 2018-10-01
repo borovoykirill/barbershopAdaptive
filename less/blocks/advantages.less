@@ -1,3 +1,23 @@
+.advantages {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advantages__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .advantages__item--fast {
   &::before {
     height: 94px;
@@ -20,5 +40,17 @@
     margin-left: -45.5px;
 
     background-image: url("../img/advantage-3-illustration.svg");
+  }
+}
+
+@media (min-width:@tablet-width) {
+  .advantages {
+    width:640px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advantages__list {
+    width: 595px;
   }
 }

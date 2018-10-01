@@ -1,15 +1,21 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+}
 
-@media @tablet-widths {
-  .page-header {
-    display: flex;
-  }
+.page-header__logo {
+  height: 85px;
+}
+
+@media (min-width: @tablet-width) {
   .page-header__logo {
-    background: #000000 url("../img/bg-desktop-inner.jpg") no-repeat center;
+    order: 2;
+    height: 400px;
   }
 }
 
-@media @desktop-widths {
+@media (min-width: @desktop-width) {
   .page-header__logo {
-    height: 649px;
+    height: 648px;
   }
 }
