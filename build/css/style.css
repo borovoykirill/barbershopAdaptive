@@ -1,13 +1,13 @@
 @font-face {
   font-family: "PT Sans Narrow";
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: url("../fonts/ptsansnarrow.woff2") format("woff2"), url("../fonts/ptsansnarrow.woff") format("woff");
 }
 @font-face {
   font-family: "PT Sans Narrow";
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   src: url("../fonts/ptsansnarrowbold.woff2") format("woff2"), url("../fonts/ptsansnarrowbold.woff") format("woff");
 }
 body {
@@ -38,15 +38,18 @@ html {
 .content-box-component {
   box-sizing: content-box;
 }
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
-  padding: 0;
-  overflow: hidden;
   border: 0;
-  clip: rect(0, 0, 0, 0);
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .page-header {
   display: -ms-flexbox;
@@ -56,15 +59,125 @@ html {
 }
 .page-header__logo {
   height: 85px;
+  text-align: center;
+}
+.page-header__logo img {
+  width: 226px;
+  height: 85px;
 }
 .main-nav {
+  position: relative;
   width: 320px;
+  min-height: 51px;
   margin: 0 auto;
+  background-color: #826550;
 }
 .main-nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 70px;
+  height: 50px;
+  background-color: #6a4d38;
+  cursor: pointer;
+  border: none;
+}
+.main-nav__toggle:hover,
+.main-nav__toggle:active {
+  background-color: #624530;
+}
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  width: 36px;
+  height: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+}
+.main-nav--closed .main-nav__toggle:active::before {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3);
+}
+.main-nav--opened .main-nav__toggle {
+  top: 0;
+  right: auto;
+  left: 0;
+}
+.main-nav--opened .main-nav__toggle::before,
+.main-nav--opened .main-nav__toggle::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 18px;
+  width: 36px;
+  height: 2px;
+  background-color: #ffffff;
+}
+.main-nav--opened .main-nav__toggle::before {
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+.main-nav--opened .main-nav__toggle::after {
+  transform: rotate(-45deg);
+}
+.main-nav--opened .main-nav__toggle:active::before,
+.main-nav--opened .main-nav__toggle:active::after {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.site-list {
+  min-height: 255px;
+  /* temp */
+  font-weight: bold;
+}
+.site-list a {
+  display: block;
+  padding: 12px  21px;
+  padding-bottom: 13px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #826550;
+  border-top: 1px solid #886e5b;
+  border-bottom: 1px solid #71543f;
+}
+.site-list a[href]:hover {
+  background-color: #775a46;
+  border-top-color: #775a46;
+}
+.site-list a[href]:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #6a4d38;
+  border-top-color: #6a4d38;
+}
+.user-list__login {
+  position: relative;
+  display: block;
+  padding: 17px 21px;
+  padding-left: 49px;
+  line-height: 18px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.user-list__login::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/sprite.png");
+  background-position: -10px -204px;
 }
 .stats {
   width: 320px;
@@ -137,10 +250,21 @@ html {
   list-style: none;
 }
 @media (min-width: 768px) {
+  .page-header {
+    background-color: #000000;
+  }
   .page-header__logo {
     -ms-flex-order: 2;
     order: 2;
     height: 400px;
+    background: #000000 url("../img/bg-tablet-inner.jpg") no-repeat center;
+  }
+  .page__header__logo img {
+    display: block;
+    width: 370px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
   }
   .main-nav {
     width: auto;
@@ -156,6 +280,8 @@ html {
   }
   .site-list {
     width: 570px;
+    min-height: 70px;
+    /* temp */
   }
   .user-list {
     width: 60px;
@@ -221,6 +347,11 @@ html {
 @media (min-width: 1200px) {
   .page-header__logo {
     height: 648px;
+    background-position: center 0;
+    background-size: cover;
+  }
+  .page-header__logo img {
+    margin-top: 57px;
   }
   .main-nav__wrapper {
     width: 960px;

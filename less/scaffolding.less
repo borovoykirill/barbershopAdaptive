@@ -1,7 +1,7 @@
 @font-face {
   font-family: "PT Sans Narrow";
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: url("../fonts/ptsansnarrow.woff2") format("woff2"),
   url("../fonts/ptsansnarrow.woff") format("woff");
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: "PT Sans Narrow";
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   src: url("../fonts/ptsansnarrowbold.woff2") format("woff2"),
   url("../fonts/ptsansnarrowbold.woff") format("woff");
 }
@@ -45,13 +45,15 @@ html {
   box-sizing: content-box;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
-  padding: 0;
-  overflow: hidden;
   border: 0;
-  clip: rect(0, 0, 0, 0);
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
