@@ -98,7 +98,7 @@ gulp.task("watch", function() { /*Отдельно вынес ватчер */
     gulp.watch("*.html", ["html:update"]);
 });
 
-gulp.task("work", function(fn){ /* Создал таску на чек изменений */
+gulp.task("watcher", function(fn){ /* Создал таску на чек изменений */
     run (
         "watch",
         "style",
