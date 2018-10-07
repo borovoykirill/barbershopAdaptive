@@ -16,6 +16,7 @@ body {
   line-height: 27px;
   font-family: "PT Sans", Arial, sans-serif;
   font-style: normal;
+  font-weight: normal;
   color: #f7f4f1;
   background-color: #292929;
 }
@@ -50,6 +51,35 @@ html {
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+.slider {
+  position: relative;
+}
+.slider__toggles {
+  position: absolute;
+  height: 10px;
+  text-align: center;
+  font-size: 0;
+}
+.slider__toggle {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 23px;
+  vertical-align: top;
+  border: 1px solid #cccccc;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.slider__toggle:last-child {
+  margin-right: 0;
+}
+.slider__item {
+  display: none;
+}
+.slider__input {
+  position: absolute;
+  opacity: 0;
 }
 .page-header {
   display: -ms-flexbox;
@@ -243,7 +273,7 @@ html {
 .stats__value,
 .stats__field {
   width: 50%;
-  padding: 20px;
+  padding: 5px;
   padding-bottom: 19px;
   vertical-align: top;
 }
@@ -271,9 +301,28 @@ html {
   padding: 0;
   list-style: none;
 }
-.advantages__title {
-  font-style: normal;
-  font-weight: 700;
+.advantages__item {
+  position: relative;
+  padding: 0 40px;
+  padding-top: 125px;
+}
+.advantages__item p {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.advantages__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 95px;
+  background-repeat: no-repeat;
+}
+.advantages__item-title {
+  margin: 0;
+  margin-bottom: 13px;
+  font-weight: bold;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
@@ -329,6 +378,7 @@ html {
   .page-header__logo {
     -ms-flex-order: 2;
     order: 2;
+    width: 100%;
     height: 400px;
     background: #000000 url("../img/bg-tablet-inner.jpg") no-repeat center;
   }
@@ -548,7 +598,7 @@ html {
 }
 @media (min-width: 1200px) {
   .page-header__logo {
-    height: 648px;
+    height: 649px;
     background-position: center 0;
     background-size: cover;
   }
@@ -703,5 +753,27 @@ html {
   .main-nav--nojs .user-list__item {
     display: block;
     background-color: #6a4d38;
+  }
+  .advantages__wrapper {
+    height: 315px;
+  }
+  .advantages__toggles {
+    bottom: 12px;
+    left: 0;
+    right: 0;
+  }
+  #advantages-input-1:checked ~ .advantages__toggles label[for="advantages-input-1"],
+  #advantages-input-2:checked ~ .advantages__toggles label[for="advantages-input-2"],
+  #advantages-input-3:checked ~ .advantages__toggles label[for="advantages-input-3"] {
+    background: #ffffff;
+  }
+  #advantages-input-1:checked ~ .advantages__list .slider__item:nth-child(1) {
+    display: block;
+  }
+  #advantages-input-2:checked ~ .advantages__list .slider__item:nth-child(2) {
+    display: block;
+  }
+  #advantages-input-3:checked ~ .advantages__list .slider__item:nth-child(3) {
+    display: block;
   }
 }
