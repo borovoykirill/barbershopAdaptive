@@ -65,6 +65,7 @@ html {
 
 .slider__toggles {
   position: absolute;
+  top: 380px;
   height: 10px;
   text-align: center;
   font-size: 0;
@@ -92,4 +93,40 @@ html {
 .slider__input {
   position: absolute;
   opacity: 0;
+}
+
+.button {
+  font: inherit;
+  width: 158px;
+  height: 48px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: @bg-lightgrey;
+  border: 1px solid #e5ddd5;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #d5cabe;
+  }
+
+  &:active {
+    color: #958c84;
+    border-color: #d5cabe;
+    background-color: #d5cabe;
+  }
+
+  &:disabled {
+    cursor: default;
+    color: #ffffff;
+    border-color: #aeaeae;
+    background-color: #aeaeae;
+  }
 }
