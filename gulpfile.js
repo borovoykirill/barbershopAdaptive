@@ -94,7 +94,8 @@ gulp.task("serve", function() {
 });
 
 gulp.task("watch", function() { /*Отдельно вынес ватчер */
-    gulp.watch("less/**/*.less");
+    gulp.watch("less/**/*.less", ["style"]);
+    gulp.watch("*.html", ["html:update"]);
 });
 
 gulp.task("watcher", function(fn){ /* Создал таску на чек изменений */
@@ -143,6 +144,6 @@ gulp.task("build", function(fn) {
     "style",
     "images",
     "symbols",
-    fn  /*Самым последним вызовом функции run должна быть функция которая была передана как аргумент*/
+    fn  /*Самым последним вызовов функции run должна быть функция которая была передана как аргумент*/
   );
 });
