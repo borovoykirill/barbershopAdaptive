@@ -11,25 +11,92 @@
 
 .page-footer__contacts {
   display: block;
+  height: 135px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 15px;
+}
 
-  .contacts__phone {
-    text-decoration: none;
-    color: #ffffff;
-  }
+.contacts__title  {
+  display: block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-  &-mobile {
-    margin-bottom: -20px;
+.contacts__phone  {
+  display: block;
+  padding-top: 10px;
+  text-decoration: none;
+  color: #ffffff;
+
+  &-mobile:hover,
+  &-mobile:focus {
+    opacity: 0.3;
   }
 }
 
-.social__list {
+.page-footer__social {
+  width: 100%;
   margin: 0;
-  padding: 0;
-  list-style: none;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social-link {
+  display: inline-block;
+  font-size: 0;
+  margin-left: 10px;
+  background: url("../img/sprite.png") no-repeat;
+
+  &--vk {
+    width: 36px;
+    height: 36px;
+    margin-left: 60px;
+    background-position: -10px -312px;
+  }
+
+  &--fb {
+    width: 36px;
+    height: 36px;
+    background-position: -10px -10px;
+  }
+
+  &--in {
+    width: 36px;
+    height: 36px;
+    margin-right: 60px;
+    background-position: -10px -109px;
+  }
+
+  &--vk:hover,
+  &--vk:focus {
+   opacity: 0.3;
+  }
+
+  &--fb:hover,
+  &--fb:focus {
+    opacity: 0.3;
+  }
+
+  &--in:hover,
+  &--in:focus {
+    opacity: 0.3;
+  }
+}
+
 
 @media (min-width: @tablet-width) {
   .page-footer {

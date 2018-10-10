@@ -539,21 +539,79 @@ html {
 }
 .page-footer__contacts {
   display: block;
+  height: 135px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 15px;
 }
-.page-footer__contacts .contacts__phone {
+.contacts__title {
+  display: block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.contacts__phone {
+  display: block;
+  padding-top: 10px;
   text-decoration: none;
   color: #ffffff;
 }
-.page-footer__contacts-mobile {
-  margin-bottom: -20px;
+.contacts__phone-mobile:hover,
+.contacts__phone-mobile:focus {
+  opacity: 0.3;
 }
-.social__list {
+.page-footer__social {
+  width: 100%;
   margin: 0;
-  padding: 0;
-  list-style: none;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.social-links {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.social-links a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.social-link {
+  display: inline-block;
+  font-size: 0;
+  margin-left: 10px;
+  background: url("../img/sprite.png") no-repeat;
+}
+.social-link--vk {
+  width: 36px;
+  height: 36px;
+  margin-left: 60px;
+  background-position: -10px -312px;
+}
+.social-link--fb {
+  width: 36px;
+  height: 36px;
+  background-position: -10px -10px;
+}
+.social-link--in {
+  width: 36px;
+  height: 36px;
+  margin-right: 60px;
+  background-position: -10px -109px;
+}
+.social-link--vk:hover,
+.social-link--vk:focus {
+  opacity: 0.3;
+}
+.social-link--fb:hover,
+.social-link--fb:focus {
+  opacity: 0.3;
+}
+.social-link--in:hover,
+.social-link--in:focus {
+  opacity: 0.3;
 }
 @media (min-width: 768px) {
   .page-header {
